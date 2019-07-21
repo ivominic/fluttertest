@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text('Test app'),
           ),
-          body: ProductManager('test product1')),
+          body: ProductManager()),
+      //body: ProductManager(startingProduct: 'Početni')), //Ako se unese, onda prikazuje prvi item na startu, inače ne. Mora se unijeti naziv opcionog parametra
     );
   }
 }
