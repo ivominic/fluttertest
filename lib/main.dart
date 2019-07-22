@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './product_manager.dart';
+import './pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,12 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           primarySwatch: Colors.deepOrange, accentColor: Colors.deepPurple),
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Test app'),
-          ),
-          body: ProductManager()),
-      //body: ProductManager(startingProduct: 'Početni')), //Ako se unese, onda prikazuje prvi item na startu, inače ne. Mora se unijeti naziv opcionog parametra
+      home: HomePage(),
     );
   }
 }
