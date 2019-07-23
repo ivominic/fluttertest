@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
+  final String title;
+  final String image;
+  final String description;
+
+  ProductPage(this.title, this.image, this.description);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Product details'),
+          title: Text(title),
         ),
         body: Center(
             child: Column(
@@ -13,9 +19,9 @@ class ProductPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment
               .center, //Horizontalno, ali unutar kolone, pa kolonu staviti u Center widget
           children: <Widget>[
-            Image.asset('assets/images/image1.jpg'),
+            Image.asset(image),
             Container(
-              child: Text('Details'),
+              child: Text(description),
               padding: EdgeInsets.all(10),
             ),
             Container(

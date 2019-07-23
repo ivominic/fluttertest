@@ -4,7 +4,8 @@ import './products.dart';
 import './product_control.dart';
 
 class ProductManager extends StatefulWidget {
-  final String startingProduct;
+  final Map<String, String>
+      startingProduct; //Prvi je uvijek string, to je key, ali value može biti razno. Ako nije jedan tip, onda se postavi "dynamic"
 
   ProductManager(
       {this.startingProduct}); //vitičaste zagrade označavaju opcioni parametar
@@ -16,7 +17,7 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManagerState extends State<ProductManager> {
-  List<String> _products = [];
+  List<Map<String, String>> _products = [];
 
 //initState se pokreće prije builda, prilikom prvog poziva ProductManager-a i u trenutku poziva build metode već ima dodat starting product koji se predaje iz main.dart fajla
   @override
@@ -27,7 +28,7 @@ class _ProductManagerState extends State<ProductManager> {
     }
   }
 
-  void _addProduct(String product) {
+  void _addProduct(Map<String, String> product) {
     setState(() {
       _products.add(product);
       //print(_products);
