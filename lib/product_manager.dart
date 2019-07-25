@@ -35,6 +35,12 @@ class _ProductManagerState extends State<ProductManager> {
     });
   }
 
+  void _deleteProduct(int index) {
+    setState(() {
+      _products.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -44,7 +50,9 @@ class _ProductManagerState extends State<ProductManager> {
           child: ProductControl(_addProduct),
         ),
         //Container(height: 400, child: Products(_products)),//ako postavi listu ispod kontrole (dugme u ovom slučaju), mora ići u kontejner
-        Expanded(child: Products(_products)), //ovo uzima preostali prostor
+        Expanded(
+            child: Products(_products,
+                deleteProduct: _deleteProduct)), //ovo uzima preostali prostor
       ],
     );
   }
